@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+<table  border="0" cellspacing="0" cellpadding="0">
+
+  <tr align="middle" valign="middle">
+    <td>
+      <label> Employees </label>
+    </td>
+
+    <button (click)="getAllEmployees()">get</button>
+
+    <td>
+
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <tr align="middle"  *ngFor = "let e of employees; let num = index">
+
+    <td  align="middle">
+      {{num+1}}
+    </td>
+    <td  align="middle">
+      {{e.name}}&nbsp;
+    </td>
+    <td  align="middle">
+      &nbsp;{{e.lastName}}
+    </td>
+  </tr>
+
+</table>
+</body>
+</html>
