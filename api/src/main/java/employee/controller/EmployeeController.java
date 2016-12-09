@@ -1,7 +1,7 @@
 package employee.controller;
 
 import employee.model.Employee;
-import employee.service.EmployeeService;
+import employee.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/api/employees")
 public class EmployeeController {
     @Autowired
-    private EmployeeService service;
+    private EmployeeServiceImpl service;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Employee> getAll() {

@@ -1,8 +1,7 @@
 package employee.service;
 
-import employee.dao.DaoEmployee;
-import employee.dao.DaoEmployeeImpl;
 import employee.model.Employee;
+import employee.repositoroes.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,15 +13,13 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl {
 
     @Autowired
-    DaoEmployeeImpl dao;
+    EmployeeRepository employeeRepository;
 
-    @Override
     public List<Employee> getAll() {
-        List<Employee> result = dao.getAll();
+        return employeeRepository.findAll();
 
-        return result;
     }
 }
